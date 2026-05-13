@@ -19,19 +19,13 @@ The weekly file is designed to be piped through `md2slack` for pasting into Slac
 /plugin install github:ricardodesimas/sre-weekly-report
 ```
 
-**2. Add `md2slack` to your shell:**
+**2. (Optional) Add `md2slack` to your shell:**
+
+The weekly report is written as plain text so it can be copied directly into Slack without any conversion. `md2slack` is only needed if you want to copy a feature notes file (which uses Markdown formatting for readability).
 
 ```bash
 echo 'source ~/path/to/sre-weekly-report/shell/md2slack.sh' >> ~/.zshrc
 source ~/.zshrc
-```
-
-Or copy the function directly into your `~/.zshrc`:
-
-```bash
-md2slack() {
-  sed -E 's/\*\*//g; s/__//g; s/\*//g; s/`//g; s/^#+[[:space:]]*//' | grep -v '^[[:space:]]*$'
-}
 ```
 
 ## Configuration
@@ -56,5 +50,5 @@ Claude will gather context from the conversation and write both files automatica
 To copy the weekly report to Slack:
 
 ```bash
-cat $NOTES_DIR/weekly/<week>.md | md2slack | pbcopy
+cat $NOTES_DIR/weekly/<week>.md | pbcopy
 ```

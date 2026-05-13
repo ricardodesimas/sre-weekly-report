@@ -91,7 +91,7 @@ Mon/Tue roll back to the previous Wednesday's week; Wed–Sun use the current we
 File: `<base>/weekly/<week>.md`
 
 - If the file does not exist, create it with a `# Week <N> — <date range>` heading first.
-- Append a single bullet point in plain English. No markdown bold or formatting.
+- Append a single bullet point. Write it as plain text — no markdown, no bold, no backticks, no asterisks. It must be pasteable directly into Slack without any conversion.
 
 Bullet format:
 ```
