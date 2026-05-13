@@ -74,19 +74,19 @@ Use this template:
 
 ### 4. Append to the weekly file
 
-Weeks reset on Wednesday. Determine the correct week number with:
+The week runs Thursday–Wednesday. Determine the correct week number by finding the most recent Thursday:
 ```bash
 dow=$(date +%u)
-if [ "$dow" -lt 3 ]; then
-  offset=$((dow - 3 + 7))
-  week=$(date -v -${offset}d +%V)
-else
+offset=$(( (dow - 4 + 7) % 7 ))
+if [ "$offset" -eq 0 ]; then
   week=$(date +%V)
+else
+  week=$(date -v -${offset}d +%V)
 fi
 echo $week
 ```
 
-Mon/Tue roll back to the previous Wednesday's week; Wed–Sun use the current week.
+Every day anchors back to the most recent Thursday's week number.
 
 File: `<base>/weekly/<week>.md`
 
