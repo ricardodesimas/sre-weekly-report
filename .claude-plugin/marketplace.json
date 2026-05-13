@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "sre-weekly-report",
+  "description": "Documents completed tasks as feature notes and weekly report bullets",
+  "owner": {
+    "name": "Ricardo Simas"
+  },
+  "plugins": [
+    {
+      "name": "sre-weekly-report",
+      "description": "Documents completed tasks as feature notes and weekly report bullets. Set NOTES_DIR in your shell to configure where files are saved.",
+      "author": {
+        "name": "Ricardo Simas"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ricardodesimas/sre-weekly-report.git",
+        "path": ".",
+        "ref": "main",
+        "sha": "2a1bc50cf000847b2b30020ca74609db0b401c0a"
+      },
+      "homepage": "https://github.com/ricardodesimas/sre-weekly-report"
+    }
+  ]
+}
